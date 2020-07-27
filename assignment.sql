@@ -22,6 +22,9 @@ JOIN "country" ON "region".id = "country".region_id
 GROUP BY "region".name;
 
 -- 6. Display the name and sq km for the 10 countries with the most land area (sort by land area).
+SELECT "country".name, "sq_km" FROM "country"
+JOIN "land_area" ON "country".country_code = "land_area".country_code
+ORDER BY "sq_km" DESC LIMIT 10;
 
 
 -- Stretch Mode
